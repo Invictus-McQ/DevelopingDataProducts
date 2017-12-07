@@ -11,13 +11,11 @@ pageWithSidebar(
                 selected=names(mtcars)[[1]]),
     selectInput('ycol', 'Y Variable', names(mtcars[c(1, 3:7)]),
                 selected=names(mtcars)[[3]]),
-    numericInput('clusters', 'Cluster Count', 3,
-                 min = 1, max = 9)
+    numericInput('clusters', 'Number of Clusters', 3,
+                 min = 1, max = 8)
   ),
   mainPanel(
-    h2("The mtcars Dataset Available for Clustering"),
     DT::dataTableOutput("mytable"),
-    h2("Clustering Plot"),
     plotOutput('plot1')
     
   )
